@@ -1,6 +1,28 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "hero": {
+        "type": "hero",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+      "hero"
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+      "sections": {
+        "hero": {
+          "type": "hero",
+          "settings": {
+          }
+        }
+      },
+      "content_for_index": [
+        "hero"
+      ]
+    }
   }
 }

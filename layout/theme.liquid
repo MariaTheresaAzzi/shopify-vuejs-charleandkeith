@@ -9,12 +9,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     {{ content_for_header }}
     <!-- Header hook for plugins -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.4/axios.min.js"
-      integrity="sha512-Th6RhKVKcUO1NdowoioG5HrNgi4JzStsjpwheSR+nWcDIVO4Wv6E6D14o/46EqqDsLSca/rcMD1a3OLyPkexAw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    < <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
 
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}

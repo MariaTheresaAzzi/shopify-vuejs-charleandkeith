@@ -1,0 +1,45 @@
+<form id="add-to-cart-form">
+  <button
+    @click="addtoCard"
+    type="submit"
+    name="add"
+    id="add-to-card-button">Add to cart</button>
+  {{ variant }}
+</form>
+
+<script>
+  if (document.querySelector('#add-to-cart-form')) {
+    const productForm = Vue.createApp({
+      data() {
+        return {variant: ""}
+      },
+      created() {
+        axios.get("/products/  {{ product.handle }} .js").then(results => {
+          console.log(results)
+          this.variant = results.data.variants[0].id
+        })
+      },
+      methods: {
+        addToCart(event) {
+          event.preventDefault()
+
+          let data = {
+            id: this.variant,
+            quantity: 1
+          }
+          axios
+            .post('/cart/add.js', data)
+            .then((response) => {
+              store.getCart()
+            })
+            .then(() => {
+              toggleMiniCart.openCart()
+            })
+            .catch(error => {
+              console.log(error)
+            })
+        }
+      }
+    }).mount('#add-to-cart-form')
+  }
+</script>
